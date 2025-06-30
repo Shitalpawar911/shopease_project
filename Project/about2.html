@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - ShopEase</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    .about-section {
+      padding: 60px 0;
+      background-color: #f8f9fa;
+    }
+
+    .about-title {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      color: #007bff;
+    }
+
+    .hover-zoom {
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .hover-zoom img {
+      transition: transform 0.5s ease;
+    }
+
+    .hover-zoom:hover img {
+      transform: scale(1.5);
+    }
+
+    .contact-title {
+      font-size: 32px;
+      font-weight: bold;
+    
+    }
+
+    .contact-box {
+  background-color: lightgoldenrodyellow;
+  border-radius: 5px;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
+  padding: 40px;
+  margin: 30px 10px;
+}
+
+.contact-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+a:hover i {
+  transform: scale(1.2);
+  transition: 0.3s ease;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="shopeasy_navbar.html">ShopEase</a>
+  </div>
+</nav>
+
+<!-- About Us Section -->
+<section class="about-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Text Content -->
+      <div class="col-md-6">
+        <h2 class="about-title">About <span class="highlight">ShopEase</span></h2>
+        <p>
+          Welcome to <strong>ShopEase</strong> – your one-stop destination for stylish clothing and the latest tech gadgets!
+          We are committed to providing the best online shopping experience for men, women, and kids.
+        </p>
+        <p>
+          Explore our wide range of <strong>clothing</strong> including trendy <em>men’s wear</em>, elegant <em>women’s collections</em>, and cute <em>kids’ outfits</em>. 
+          Our fashion collection is updated regularly to keep up with the latest trends.
+        </p>
+        <p>
+          Tech lovers can shop top-rated <strong>smartphones</strong>, powerful <strong>laptops</strong>, and quality <strong>headphones</strong> from leading brands—all in one place.
+        </p>
+        <p>
+          With fast delivery, secure payment options, and excellent customer support, ShopEase ensures a smooth and satisfying shopping experience.
+        </p>
+      </div>
+
+      <!-- Image with hover effect -->
+      <div class="col-md-6 mt-4 mt-md-0">
+        <div class="hover-zoom">
+          <img src="about6.jpg" alt="About Us Image" class="img-fluid">
+        </div>
+      </div>
+    </div> <!-- 👈 this was missing -->
+  </div>
+</section>
+
+<!-- Contact Section -->
+<!-- Contact Section -->
+<section style="background-color: azure;">
+  <div class="container bg-body-secondary">
+    <h2 class="text-center contact-title">Contact Details</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="contact-box row">
+          
+          <!-- Left Column -->
+          <div class="col-md-6">
+            <p class="d-flex align-items-center">
+              <span class="contact-icon">📍</span>
+              <strong>Address:</strong>&nbsp;ShopEase HQ, Pune, Maharashtra, India
+            </p>
+            <p class="d-flex align-items-center">
+              <span class="contact-icon">📞</span>
+              <strong>Phone:</strong>&nbsp;+91 12345 67890
+            </p>
+          </div>
+
+          <!-- Right Column -->
+          <div class="col-md-6">
+            <p class="d-flex align-items-center">
+              <span class="contact-icon">📧</span>
+              <strong>Email:</strong>&nbsp;sp@shopease.in
+            </p>
+            <p class="d-flex align-items-center">
+              <span class="contact-icon">⏰</span>
+              <strong>Working Hours:</strong>&nbsp;Mon - Sat, 9:00 AM - 8:00 PM
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Social Media Icons -->
+<div class=" bg-light text-center ">
+  <a href="https://wa.me/918767674998" class="text-success fs-4 me-3" target="_blank"><i class="bi bi-whatsapp"></i></a>
+  <a href="https://instagram.com/shopease" class="text-danger fs-4 me-3" target="_blank"><i class="bi bi-instagram"></i></a>
+  <a href="https://t.me/shopease" class="text-info fs-4 me-3" target="_blank"><i class="bi bi-telegram"></i></a>
+  <a href="https://twitter.com/shopease" class="text-primary fs-4" target="_blank"><i class="bi bi-twitter"></i></a>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center p-3">
+  &copy; 2025 ShopEase. All rights reserved.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  $(document).ready(function () {
+    // Fade in the About Us section
+    $('.about-section').css('opacity', 0).animate({opacity: 1}, 1200);
+
+    // Slide up the contact section
+    $('.contact-box').css('opacity', 0).slideUp(0).delay(600).slideDown(800).animate({opacity: 1}, {queue: false, duration: 1000});
+
+    // Zoom-in image in About section
+    $('.hover-zoom img').css({transform: 'scale(0.8)', opacity: 0}).animate({opacity: 1}, {
+      duration: 1000,
+      step: function (now, fx) {
+        if (fx.prop === "opacity") {
+          $(this).css('transform', `scale(${0.8 + now * 0.2})`);
+        }
+      }
+    });
+
+    // Social icons bounce
+    $('a i').each(function (index) {
+      $(this).css('opacity', 0).delay(index * 200).animate({opacity: 1, top: "-5px"}, {
+        duration: 500,
+        step: function (now, fx) {
+          if (fx.prop === "top") {
+            $(this).css('position', 'relative');
+          }
+        }
+      }).delay(100).animate({top: "0"}, 200);
+    });
+  });
+</script>
+
+</body>
+</html>

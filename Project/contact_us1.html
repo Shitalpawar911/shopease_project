@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    .bg-section {
+      background-image: url('contactus2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      padding: 50px 0;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      display: none; /* Hidden for animation */
+    }
+
+    .bg-inner {
+      border: 1px solid grey;
+      background-color: lightsteelblue;
+    }
+
+    .form-control,
+    .form-select,
+    .form-check {
+      display: none; /* Hide elements for animation */
+    }
+
+    .btn-animate {
+      transition: all 0.3s ease;
+    }
+
+    .btn-animate:hover {
+      transform: scale(1.05);
+      background-color: #0a58ca !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="shopeasy_navbar.html">ShopEase</a>
+  </div>
+</nav>
+
+<!-- Main Section -->
+<div class="bg-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5 form-container text-center bg-inner">
+        <h2 class="mb-4">Contact Us</h2>
+        <form>
+
+          <!-- Type of Query -->
+          <div class="mb-3 text-start">
+            <label for="queryType" class="form-label">Type of Query</label>
+            <select class="form-select" id="queryType" required>
+              <option value="" disabled selected>Select</option>
+              <option>Order Related Issues</option>
+              <option>Site Related Issues</option>
+              <option>Complaint Related</option>
+              <option>Others</option>
+            </select>
+          </div>
+
+          <!-- Name -->
+          <div class="mb-3 text-start">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3 text-start">
+            <label for="email" class="form-label">Email-ID</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+          </div>
+
+          <!-- Phone -->
+          <div class="mb-3 text-start">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+          </div>
+
+          <!-- Membership -->
+          <div class="mb-3 text-start">
+            <label class="form-label">Are you a member of Online Shopping?</label><br>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="membership" id="yesMember" value="Yes" required>
+              <label class="form-check-label" for="yesMember">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="membership" id="noMember" value="No">
+              <label class="form-check-label" for="noMember">No</label>
+            </div>
+          </div>
+
+          <!-- Query Details -->
+          <div class="mb-3 text-start">
+            <label for="queryDetails" class="form-label">Elaborate your query</label>
+            <textarea class="form-control" id="queryDetails" rows="4" placeholder="Type your message here..." required></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-animate">Submit Query</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+  <p class="mb-0">&copy; 2025 ShopEase. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- jQuery Animation Script -->
+<script>
+  $(document).ready(function () {
+    // Fade in form container
+    $('.form-container').fadeIn(1000);
+
+    // Sequential animation for form inputs
+    $('.form-select, .form-control, .form-check').each(function (i) {
+      $(this).delay(400 * i).slideDown(500);
+    });
+
+    // Submit button animation on click
+    $('form').on('submit', function (e) {
+      e.preventDefault();
+      $('.btn-animate').text("Sending...").fadeOut(400).fadeIn(400).text("Submitted!");
+    });
+  });
+</script>
+</body>
+</html>
